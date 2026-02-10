@@ -15,17 +15,19 @@ async function handleSubmit(event) {
     event.preventDefault();
 
     const title = document.getElementById('title').value;
-    const content = document.getElementById('content').value;
-    const image = document.getElementById('image').value;
-    const category = document.getElementById('category').value;
+    const body = document.getElementById('body').value;
+    const media = document.getElementById('media').value;
+
+    errorMessage.textContent = '';
+    successMessage.textContent = '';
 
     try {
-        const response = await apiRequest('/posts', {
+        const response = await apiRequest('/blog/posts/Paal', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${getToken()}`,
             },
-            body: JSON.stringify({ title, content, image, category }),
+            body: JSON.stringify({ title, body, media: { url: media} }),
         });
 
         successMessage.textContent = 'Nyheita er opprettet!';
