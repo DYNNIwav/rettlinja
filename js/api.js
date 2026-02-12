@@ -4,7 +4,7 @@ export async function apiRequest(endpoint, options = {}) {
     const url = API_BASE + endpoint;
 
     const headers = {
-        'content-Type': 'application/json',
+        'Content-Type': 'application/json',
     };
 
     const config = {
@@ -16,6 +16,11 @@ export async function apiRequest(endpoint, options = {}) {
     };
 
     const response = await fetch(url, config);
+
+    if (response.status === 204) {
+        return {};
+    }
+
     const data = await response.json();
 
     if (!response.ok) {

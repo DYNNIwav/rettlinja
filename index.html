@@ -1,36 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rettlinja - Unbiased News</title>
-  <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-  <header>
-    <nav class="container">
-      <a href="/" class="logo">Rettlinja</a>
-      <!-- Navigation links will go here -->
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rettlinja - Upartiske nyheiter</title>
+        <link rel="stylesheet" href="./css/styles.css" />
+        <link rel="stylesheet" href="./css/feed.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="container nav">
+                <a href="/" class="logo">
+                    <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5"/>
+                        <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A" paint-order="stroke" stroke="#F8FAFC" stroke-width="1.5">Rettlinja</text>
+                    </svg>
+                </a>
+                <div class="nav-links" id="nav-links">
+                    <a href="/account/login.html">Logg inn</a>
+                </div>
+            </nav>
+        </header>
 
-  <main class="container">
-    <!-- Carousel section will go here -->
-    <section id="carousel">
-      <h2>Latest Posts</h2>
-    </section>
+        <main class="container">
+            <section id="carousel">
+                <h2>Siste nytt</h2>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev" id="carousel-prev">
+                        &larr;
+                    </button>
+                    <div class="carousel-slides" id="carousel-slides"></div>
+                    <button class="carousel-btn next" id="carousel-next">
+                        &rarr;
+                    </button>
+                </div>
+            </section>
 
-    <!-- Thumbnail grid will go here -->
-    <section id="posts">
-      <h2>All Posts</h2>
-    </section>
-  </main>
+            <section id="posts">
+                <h2>Alle nyheiter</h2>
+            </section>
+        </main>
 
-  <footer class="container">
-    <p>&copy; 2025 Rettlinja</p>
-  </footer>
+        <footer class="container">
+            <p>&copy; 2026 Rettlinja</p>
+        </footer>
 
-  <!-- JavaScript -->
-  <script type="module" src="./js/main.js"></script>
-</body>
+        <script type="module" src="./js/nav.js"></script>
+        <script type="module" src="./js/main.js"></script>
+    </body>
 </html>

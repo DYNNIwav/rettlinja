@@ -1,5 +1,5 @@
 import { apiRequest } from './api.js';
-import { isLoggedIn, getToken } from './auth.js';
+import { isLoggedIn, getToken, getUsername } from './auth.js';
 
 if (!isLoggedIn()) {
     window.location.href = '/account/login.html';
@@ -22,7 +22,7 @@ async function handleSubmit(event) {
     successMessage.textContent = '';
 
     try {
-        const response = await apiRequest('/blog/posts/Paal', {
+        const response = await apiRequest(`/blog/posts/${getUsername()}`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${getToken()}`,

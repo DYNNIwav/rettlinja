@@ -8,9 +8,16 @@
   </head>
   <body>
     <header>
-      <nav class="container">
-        <a href="/" class="logo">Rettlinja</a>
-        <!-- Navigation links will go here -->
+      <nav class="container nav">
+        <a href="/" class="logo">
+          <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5"/>
+            <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A" paint-order="stroke" stroke="#F8FAFC" stroke-width="1.5">Rettlinja</text>
+          </svg>
+        </a>
+        <div class="nav-links" id="nav-links">
+          <a href="/account/login.html">Logg inn</a>
+        </div>
       </nav>
     </header>
 
@@ -75,6 +82,7 @@
       </div>
     </main>
 
+    <script type="module" src="../js/nav.js"></script>
     <script type="module" src="../js/register.js"></script>
   </body>
 </html>
