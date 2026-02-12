@@ -14,7 +14,7 @@ async function loadPost() {
 
         let editButton = '';
         if (isLoggedIn() && getUsername() === 'paal') {
-            editButton = `<a href="/post/edit.html?id=${postId}" class="btn btn-primary" style="display:inline-block;margin-top:var(--space-md);">Rediger nyheit</a>`;
+            editButton = `<a href="./edit.html?id=${postId}" class="btn btn-primary" style="display:inline-block;margin-top:var(--space-md);">Rediger nyheit</a>`;
         }
 
         postContainer.innerHTML = `

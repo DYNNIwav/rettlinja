@@ -2,7 +2,7 @@ import { apiRequest } from './api.js';
 import { isLoggedIn, getToken, getUsername } from './auth.js';
 
 if (!isLoggedIn()) {
-    window.location.href = '/account/login.html';
+    window.location.href = '../account/login.html';
 }
 
 const params = new URLSearchParams(window.location.search);
@@ -46,7 +46,7 @@ editForm.addEventListener('submit', async function (event) {
 
         successMessage.textContent = 'Nyheita er oppdatert!';
         setTimeout(() => {
-            window.location.href = `/post/index.html?id=${postId}`;
+            window.location.href = `./index.html?id=${postId}`;
         }, 2000);
     } catch (error) {
         errorMessage.textContent = error.message;
@@ -69,7 +69,7 @@ document.getElementById('delete-btn').addEventListener('click', async function (
         });
 
         alert('Nyheita er sletta.');
-        window.location.href = '/';
+        window.location.href = '../';
     } catch (error) {
         errorMessage.textContent = error.message;
     }

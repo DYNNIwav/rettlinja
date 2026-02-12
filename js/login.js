@@ -18,7 +18,7 @@ async function handleSubmit(event) {
 
         successMessage.textContent = 'Velkomen tilbake!';
         setTimeout(() => {
-            window.location.href = '/';
+            window.location.href = '../';
         }, 3000);
     } catch (error) {
         errorMessage.textContent = error.message;

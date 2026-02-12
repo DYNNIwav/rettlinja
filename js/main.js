@@ -21,7 +21,7 @@ function displayPosts(posts) {
 
     posts.forEach(function (post) {
         const card = document.createElement('a');
-        card.href = `/post/index.html?id=${post.id}`;
+        card.href = `./post/index.html?id=${post.id}`;
         card.className = 'post-card';
 
         card.innerHTML = `
