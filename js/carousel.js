@@ -16,7 +16,7 @@ export function setupCarousel(posts) {
             <img src="${post.media?.url || ''}" alt="${post.media?.alt || post.title}">
             <div class="carousel-slide-content">
                 <h3>${post.title}</h3>
-                <a href="/post/index.html?id=${post.id}" class="btn btn-primary">Les meir</a>
+                <a href="./post/index.html?id=${post.id}" class="btn btn-primary">Les meir</a>
             </div>
         `;
         container.appendChild(slide);

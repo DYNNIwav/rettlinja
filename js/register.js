@@ -26,7 +26,7 @@ async function handleSubmit(event) {
 
         successMessage.textContent = 'Kontoen din er oppretta!';
         setTimeout(() => {
-            window.location.href = '/account/login.html';
+            window.location.href = './login.html';
         }, 3000);
     } catch (error) {
         errorMessage.textContent = error.message;

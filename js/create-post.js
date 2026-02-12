@@ -2,7 +2,7 @@ import { apiRequest } from './api.js';
 import { isLoggedIn, getToken, getUsername } from './auth.js';
 
 if (!isLoggedIn()) {
-    window.location.href = '/account/login.html';
+    window.location.href = '../account/login.html';
 }
 
 const createPostForm = document.getElementById('create-post-form');
@@ -32,7 +32,7 @@ async function handleSubmit(event) {
 
         successMessage.textContent = 'Nyheita er opprettet!';
         setTimeout(() => {
-            window.location.href = '/';
+            window.location.href = '../';
         }, 3000);
     } catch (error) {
         errorMessage.textContent = error.message;
