@@ -1,16 +1,19 @@
 /* Post grid */
 #posts {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 
 #posts h2 {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-accent);
+  display: inline-block;
 }
 
 .post-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 @media (min-width: 600px) {
@@ -32,40 +35,54 @@
   border-radius: var(--radius);
   overflow: hidden;
   color: var(--color-text);
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .post-card:hover {
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
 .post-card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
 }
 
 .post-card-content {
-  padding: var(--space-md);
+  padding: var(--space-lg);
 }
 
 .post-card-content h3 {
   font-size: 1rem;
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
-.post-card-content p {
+.post-card-excerpt {
   color: var(--color-text-muted);
   font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.post-card-date {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Carousel */
 #carousel {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 
 #carousel h2 {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-accent);
+  display: inline-block;
 }
 
 .carousel-wrapper {
@@ -73,30 +90,36 @@
 }
 
 .carousel-slides {
+  position: relative;
   overflow: hidden;
   border-radius: var(--radius);
+  height: 300px;
+}
+
+@media (min-width: 600px) {
+  .carousel-slides {
+    height: 450px;
+  }
 }
 
 .carousel-slide {
-  display: none;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
 }
 
 .carousel-slide.active {
-  display: block;
+  transform: translateX(0);
 }
 
 .carousel-slide img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
-  border-radius: var(--radius);
-}
-
-@media (min-width: 600px) {
-  .carousel-slide img {
-    height: 350px;
-  }
 }
 
 .carousel-slide-content {
@@ -104,34 +127,62 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: var(--space-lg);
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 160px var(--space-lg) var(--space-xl);
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 25%,
+    rgba(0, 0, 0, 0.7) 55%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
   border-radius: 0 0 var(--radius) var(--radius);
   color: white;
 }
 
 .carousel-slide-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: var(--space-sm);
   color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-slide-content a {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-accent);
   color: white;
-  text-decoration: underline;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.carousel-slide-content a:hover {
+  text-decoration: none;
+  opacity: 0.9;
 }
 
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.25rem;
   cursor: pointer;
   z-index: 1;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-btn:hover {
+  background: white;
 }
 
 .carousel-btn.prev {
@@ -140,4 +191,26 @@
 
 .carousel-btn.next {
   right: var(--space-sm);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-border);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.carousel-dot.active {
+  background: var(--color-accent);
 }

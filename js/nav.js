@@ -1,6 +1,7 @@
 import { isLoggedIn, logout } from './auth.js';
 
 const navLinks = document.getElementById('nav-links');
+// figure out the correct relative path depending on what page we are on
 const path = window.location.pathname;
 const root = path.includes('/post/') || path.includes('/account/') ? '../' : './';
 

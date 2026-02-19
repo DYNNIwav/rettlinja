@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="nn">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
+    <a href="#main" class="skip-link">Hopp til innhald</a>
     <header>
       <nav class="container nav">
-        <a href="../" class="logo">
+        <a href="../" class="logo" aria-label="Rettlinja - Heim">
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
             <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5"/>
             <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A" paint-order="stroke" stroke="#F8FAFC" stroke-width="1.5">Rettlinja</text>
@@ -22,9 +23,9 @@
       </nav>
     </header>
 
-    <main class="container">
+    <main class="container" id="main">
       <div class="form-wrapper">
-        <h1>Log In</h1>
+        <h1>Logg inn</h1>
 
         <form id="login-form">
           <div class="form-group">
@@ -49,8 +50,8 @@
             />
           </div>
 
-          <div id="error-message" class="error-message"></div>
-          <div id="success-message" class="success-message"></div>
+          <div id="error-message" class="error-message" aria-live="polite"></div>
+          <div id="success-message" class="success-message" aria-live="polite"></div>
 
           <button type="submit" class="btn btn-primary">Logg inn</button>
         </form>
@@ -60,6 +61,10 @@
         </p>
       </div>
     </main>
+
+    <footer>
+      <p>&copy; 2026 Rettlinja</p>
+    </footer>
 
     <script type="module" src="../js/nav.js"></script>
     <script type="module" src="../js/login.js"></script>

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="nn">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="../css/post.css" />
   </head>
   <body>
+    <a href="#main" class="skip-link">Hopp til innhald</a>
     <header>
       <nav class="container nav">
-        <a href="../" class="logo">
+        <a href="../" class="logo" aria-label="Rettlinja - Heim">
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5"/>
-            <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A" paint-order="stroke" stroke="#F8FAFC" stroke-width="1.5">Rettlinja</text>
+              <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5"/>
+              <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A" paint-order="stroke" stroke="#F8FAFC" stroke-width="1.5">Rettlinja</text>
           </svg>
         </a>
         <div class="nav-links" id="nav-links">
@@ -23,13 +24,13 @@
       </nav>
     </header>
 
-    <main class="container">
+    <main class="container" id="main">
       <article id="post" class="single-post">
         <!-- JS will fill this -->
       </article>
     </main>
 
-    <footer class="container">
+    <footer>
       <p>&copy; 2026 Rettlinja</p>
     </footer>
 

@@ -13,6 +13,9 @@ const errorMessage = document.getElementById('error-message');
 const successMessage = document.getElementById('success-message');
 
 async function loadPost() {
+    editForm.style.display = 'none';
+    editForm.insertAdjacentHTML('beforebegin', '<div class="loading" id="edit-loading"></div>');
+
     try {
         const response = await apiRequest(`/blog/posts/${getUsername()}/${postId}`);
         const post = response.data;
@@ -20,7 +23,13 @@ async function loadPost() {
         document.getElementById('title').value = post.title;
         document.getElementById('body').value = post.body;
         document.getElementById('media').value = post.media?.url || '';
+
+        document.getElementById('edit-loading').remove();
+        editForm.style.display = '';
     } catch (error) {
+        const loader = document.getElementById('edit-loading');
+        if (loader) loader.remove();
+        editForm.style.display = '';
         errorMessage.textContent = 'Kunne ikkje lasta inn nyheita.';
     }
 }

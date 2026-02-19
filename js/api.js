@@ -17,6 +17,7 @@ export async function apiRequest(endpoint, options = {}) {
 
     const response = await fetch(url, config);
 
+    // 204 means success but no content (like after deleting a post)
     if (response.status === 204) {
         return {};
     }

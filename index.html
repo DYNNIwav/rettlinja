@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="nn">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,9 +9,10 @@
         <link rel="stylesheet" href="./css/feed.css" />
     </head>
     <body>
+        <a href="#main" class="skip-link">Hopp til innhald</a>
         <header>
             <nav class="container nav">
-                <a href="./" class="logo">
+                <a href="./" class="logo" aria-label="Rettlinja - Heim">
                     <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
                         <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5"/>
                         <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A" paint-order="stroke" stroke="#F8FAFC" stroke-width="1.5">Rettlinja</text>
@@ -23,17 +24,18 @@
             </nav>
         </header>
 
-        <main class="container">
+        <main class="container" id="main">
             <section id="carousel">
                 <h2>Siste nytt</h2>
                 <div class="carousel-wrapper">
                     <button class="carousel-btn prev" id="carousel-prev" aria-label="Førre nyheit">
-                        &larr;
+                        &#10094;
                     </button>
                     <div class="carousel-slides" id="carousel-slides"></div>
                     <button class="carousel-btn next" id="carousel-next" aria-label="Neste nyheit">
-                        &rarr;
+                        &#10095;
                     </button>
+                    <div class="carousel-dots" id="carousel-dots"></div>
                 </div>
             </section>
 
@@ -42,7 +44,7 @@
             </section>
         </main>
 
-        <footer class="container">
+        <footer>
             <p>&copy; 2026 Rettlinja</p>
         </footer>
 

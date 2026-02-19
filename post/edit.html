@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="nn">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rediger nyheit - Rettlinja</title>
     <meta name="description" content="Rediger eller slett ei nyheit på Rettlinja." />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/editor.css" />
   </head>
   <body>
+    <a href="#main" class="skip-link">Hopp til innhald</a>
     <header>
       <nav class="container nav">
-        <a href="../" class="logo">
+        <a href="../" class="logo" aria-label="Rettlinja - Heim">
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
             <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5"/>
             <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A" paint-order="stroke" stroke="#F8FAFC" stroke-width="1.5">Rettlinja</text>
@@ -22,51 +24,49 @@
       </nav>
     </header>
 
-    <main class="container">
-      <div class="form-wrapper">
-        <h1>Rediger nyheit</h1>
+    <main class="container" id="main">
+      <form id="edit-post-form" class="editor">
+        <input
+          type="text"
+          id="title"
+          name="title"
+          required
+          placeholder="Tittel på nyheita"
+          class="editor-title"
+        />
 
-        <form id="edit-post-form">
-          <div class="form-group">
-            <label for="title">Tittel</label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              required
-              placeholder="Tittel på nyheita"
-            />
-          </div>
+        <textarea
+          id="body"
+          name="body"
+          required
+          placeholder="Skriv innhaldet her..."
+          class="editor-body"
+        ></textarea>
 
-          <div class="form-group">
-            <label for="body">Innhold</label>
-            <textarea
-              id="body"
-              name="body"
-              required
-              placeholder="Innhold på nyheita"
-            ></textarea>
-          </div>
+        <div class="editor-media">
+          <label for="media">Bilete-URL</label>
+          <input
+            type="url"
+            id="media"
+            name="media"
+            required
+            placeholder="https://example.com/bilete.jpg"
+          />
+        </div>
 
-          <div class="form-group">
-            <label for="media">Media</label>
-            <input
-              type="url"
-              id="media"
-              name="media"
-              required
-              placeholder="https://picsum.photos/800/400"
-            />
-          </div>
+        <div id="error-message" class="error-message" aria-live="polite"></div>
+        <div id="success-message" class="success-message" aria-live="polite"></div>
 
-          <div id="error-message" class="error-message"></div>
-          <div id="success-message" class="success-message"></div>
-
+        <div class="editor-actions">
           <button type="submit" class="btn btn-primary">Lagre endringar</button>
           <button type="button" id="delete-btn" class="btn btn-danger">Slett nyheit</button>
-        </form>
-      </div>
+        </div>
+      </form>
     </main>
+
+    <footer>
+      <p>&copy; 2026 Rettlinja</p>
+    </footer>
 
     <script type="module" src="../js/nav.js"></script>
     <script type="module" src="../js/edit-post.js"></script>
