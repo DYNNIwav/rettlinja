@@ -17,6 +17,7 @@ async function handleSubmit(event) {
     const title = document.getElementById('title').value;
     const body = document.getElementById('body').value;
     const media = document.getElementById('media').value;
+    const mediaAlt = document.getElementById('media-alt').value;
 
     errorMessage.textContent = '';
     successMessage.textContent = '';
@@ -27,7 +28,7 @@ async function handleSubmit(event) {
             headers: {
                 'Authorization': `Bearer ${getToken()}`,
             },
-            body: JSON.stringify({ title, body, media: { url: media} }),
+            body: JSON.stringify({ title, body, media: { url: media, alt: mediaAlt } }),
         });
 
         successMessage.textContent = 'Nyheita er opprettet!';

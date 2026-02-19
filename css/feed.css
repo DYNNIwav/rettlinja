@@ -35,7 +35,9 @@
   border-radius: var(--radius);
   overflow: hidden;
   color: var(--color-text);
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
 }
 
 .post-card:hover {
@@ -127,7 +129,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 160px var(--space-lg) var(--space-xl);
+  padding: 100px var(--space-xl) var(--space-lg);
   background: linear-gradient(
     to bottom,
     transparent 0%,
@@ -140,10 +142,19 @@
 }
 
 .carousel-slide-content h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: var(--space-sm);
   color: white;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 600px) {
+  .carousel-slide-content {
+    padding: 160px var(--space-lg) var(--space-xl);
+  }
+  .carousel-slide-content h3 {
+    font-size: 1.5rem;
+  }
 }
 
 .carousel-slide-content a {

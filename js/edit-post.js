@@ -23,6 +23,7 @@ async function loadPost() {
         document.getElementById('title').value = post.title;
         document.getElementById('body').value = post.body;
         document.getElementById('media').value = post.media?.url || '';
+        document.getElementById('media-alt').value = post.media?.alt || '';
 
         document.getElementById('edit-loading').remove();
         editForm.style.display = '';
@@ -40,6 +41,7 @@ editForm.addEventListener('submit', async function (event) {
     const title = document.getElementById('title').value;
     const body = document.getElementById('body').value;
     const media = document.getElementById('media').value;
+    const mediaAlt = document.getElementById('media-alt').value;
 
     errorMessage.textContent = '';
     successMessage.textContent = '';
@@ -50,7 +52,7 @@ editForm.addEventListener('submit', async function (event) {
             headers: {
                 'Authorization': `Bearer ${getToken()}`,
             },
-            body: JSON.stringify({ title, body, media: { url: media } }),
+            body: JSON.stringify({ title, body, media: { url: media, alt: mediaAlt } }),
         });
 
         successMessage.textContent = 'Nyheita er oppdatert!';
