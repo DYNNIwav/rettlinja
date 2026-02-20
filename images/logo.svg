@@ -1,10 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40">
-  <defs>
-    <mask id="line-mask">
-      <rect width="200" height="40" fill="white"/>
-      <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="black">Rettlinja</text>
-    </mask>
-  </defs>
-  <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5" mask="url(#line-mask)"/>
-  <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A">Rettlinja</text>
+<svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+  <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5"/>
+  <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A" paint-order="stroke" stroke="#F8FAFC" stroke-width="1.5">Rettlinja</text>
 </svg>

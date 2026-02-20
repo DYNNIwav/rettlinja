@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opprett nyheit - Rettlinja</title>
     <meta name="description" content="Opprett ei ny nyheit på Rettlinja." />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/editor.css" />
   </head>
@@ -14,8 +15,28 @@
       <nav class="container nav">
         <a href="../" class="logo" aria-label="Rettlinja - Heim">
           <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="21" x2="200" y2="21" stroke="#0EA5E9" stroke-width="3.5"/>
-            <text x="8" y="29" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="24" letter-spacing="-0.5" fill="#0F172A" paint-order="stroke" stroke="#F8FAFC" stroke-width="1.5">Rettlinja</text>
+            <line
+              x1="0"
+              y1="21"
+              x2="200"
+              y2="21"
+              stroke="#0EA5E9"
+              stroke-width="3.5"
+            />
+            <text
+              x="8"
+              y="29"
+              font-family="'JetBrains Mono', monospace"
+              font-weight="700"
+              font-size="24"
+              letter-spacing="-0.5"
+              fill="#0F172A"
+              paint-order="stroke"
+              stroke="#F8FAFC"
+              stroke-width="1.5"
+            >
+              Rettlinja
+            </text>
           </svg>
         </a>
         <div class="nav-links" id="nav-links">
@@ -59,10 +80,20 @@
             name="media-alt"
             placeholder="Beskriv kva biletet viser"
           />
+          <img
+            id="media-preview"
+            src=""
+            alt="Førehandsvisning av biletet"
+            hidden
+          />
         </div>
 
         <div id="error-message" class="error-message" aria-live="polite"></div>
-        <div id="success-message" class="success-message" aria-live="polite"></div>
+        <div
+          id="success-message"
+          class="success-message"
+          aria-live="polite"
+        ></div>
 
         <div class="editor-actions">
           <button type="submit" class="btn btn-primary">Publiser nyheit</button>

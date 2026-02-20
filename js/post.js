@@ -62,11 +62,18 @@ async function loadPost() {
 function setupShareButton() {
     const shareBtn = document.getElementById('share-btn');
     shareBtn.addEventListener('click', function () {
-        navigator.clipboard.writeText(window.location.href);
-        shareBtn.textContent = 'Kopiert til utklippstavla!';
-        setTimeout(function () {
-            shareBtn.textContent = 'Del denne nyheita';
-        }, 2000);
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                url: window.location.href,
+            });
+        } else {
+            navigator.clipboard.writeText(window.location.href);
+            shareBtn.textContent = 'Kopiert til utklippstavla!';
+            setTimeout(function () {
+                shareBtn.textContent = 'Del denne nyheita';
+            }, 2000);
+        }
     });
 }
 

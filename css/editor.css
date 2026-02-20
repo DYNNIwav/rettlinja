@@ -78,6 +78,14 @@
   border-color: var(--color-accent);
 }
 
+#media-preview {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-top: var(--space-sm);
+}
+
 .editor-actions {
   margin-top: var(--space-xl);
   display: flex;

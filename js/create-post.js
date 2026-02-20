@@ -9,6 +9,25 @@ const createPostForm = document.getElementById('create-post-form');
 const errorMessage = document.getElementById('error-message');
 const successMessage = document.getElementById('success-message');
 
+const mediaInput = document.getElementById('media');
+const preview = document.getElementById('media-preview');
+
+mediaInput.addEventListener('input', function () {
+    if (mediaInput.value) {
+        preview.src = mediaInput.value;
+    } else {
+        preview.hidden = true;
+    }
+});
+
+preview.addEventListener('load', function () {
+    preview.hidden = false;
+});
+
+preview.addEventListener('error', function () {
+    preview.hidden = true;
+});
+
 createPostForm.addEventListener('submit', handleSubmit);
 
 async function handleSubmit(event) {

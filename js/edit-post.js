@@ -12,6 +12,25 @@ const editForm = document.getElementById('edit-post-form');
 const errorMessage = document.getElementById('error-message');
 const successMessage = document.getElementById('success-message');
 
+const mediaInput = document.getElementById('media');
+const preview = document.getElementById('media-preview');
+
+mediaInput.addEventListener('input', function () {
+    if (mediaInput.value) {
+        preview.src = mediaInput.value;
+    } else {
+        preview.hidden = true;
+    }
+});
+
+preview.addEventListener('load', function () {
+    preview.hidden = false;
+});
+
+preview.addEventListener('error', function () {
+    preview.hidden = true;
+});
+
 async function loadPost() {
     editForm.style.display = 'none';
     editForm.insertAdjacentHTML('beforebegin', '<div class="loading" id="edit-loading"></div>');
@@ -24,6 +43,11 @@ async function loadPost() {
         document.getElementById('body').value = post.body;
         document.getElementById('media').value = post.media?.url || '';
         document.getElementById('media-alt').value = post.media?.alt || '';
+
+        // show preview if the post already has an image
+        if (post.media?.url) {
+            preview.src = post.media.url;
+        }
 
         document.getElementById('edit-loading').remove();
         editForm.style.display = '';
