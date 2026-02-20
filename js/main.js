@@ -56,6 +56,7 @@ function displayPosts(posts) {
                 <h3>${post.title}</h3>
                 <p class="post-card-excerpt">${truncate(post.body, 120)}</p>
                 <p class="post-card-date">${formatDate(post.created)}</p>
+                <p class="post-card-author">Av ${post.author?.name}</p>
             </div>
         `;
 

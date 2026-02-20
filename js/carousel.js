@@ -44,7 +44,7 @@ export function setupCarousel(posts) {
         goToSlide(newIndex, 'next');
     }, 8000);
 
-    const viewport = document.querySelector('.carousel-slides');
+    const viewport = document.querySelector('.carousel-wrapper');
     viewport.addEventListener('mouseenter', function () {
         clearInterval(timer);
     });
