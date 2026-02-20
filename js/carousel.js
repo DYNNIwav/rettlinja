@@ -38,6 +38,32 @@ export function setupCarousel(posts) {
     });
 
     setupButtons();
+    
+    let timer = setInterval(function () {
+        const newIndex = (currentIndex + 1) % slides.length;
+        goToSlide(newIndex, 'next');
+    }, 8000);
+
+    const viewport = document.querySelector('.carousel-slides');
+    viewport.addEventListener('mouseenter', function () {
+        clearInterval(timer);
+    });
+        viewport.addEventListener('mouseleave', function () {
+            timer = setInterval(function () {
+                const newIndex = (currentIndex + 1) % slides.length;
+                goToSlide(newIndex, 'next');
+            }, 8000);
+    });
+    viewport.addEventListener('focusin', function () {
+        clearInterval(timer);
+    });
+  
+    viewport.addEventListener('focusout', function () {
+        timer = setInterval(function () {
+            const newIndex = (currentIndex + 1) % slides.length;
+            goToSlide(newIndex, 'next');
+        }, 8000);
+    });
 }
 
 // prevents clicking too fast while a slide is still moving
