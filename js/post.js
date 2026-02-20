@@ -62,7 +62,7 @@ async function loadPost() {
 function setupShareButton() {
     const shareBtn = document.getElementById('share-btn');
     shareBtn.addEventListener('click', function () {
-        if (navigator.share) {
+        if (navigator.share && 'ontouchstart' in window) {
             navigator.share({
                 title: document.title,
                 url: window.location.href,
