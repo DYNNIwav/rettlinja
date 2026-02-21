@@ -92,8 +92,17 @@
   gap: var(--space-md);
 }
 
-.editor-actions .btn {
-  padding: 12px var(--space-xl);
+@media (max-width: 600px) {
+  .editor-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 375px) {
+  .editor-actions .btn {
+    font-size: 0.75rem;
+    padding: 12px var(--space-md);
+  }
 }
 
 .editor-actions .btn-danger {
